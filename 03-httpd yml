@@ -1,23 +1,20 @@
 ---
-- name: install HTTPD server
-hosts: n2
-become: yes
+- name: Install HTTPD server
+  hosts: n2
+  become: yes
 
-tasks:
-- name: install HTTPD
-yum:
-name: Httpd
-state: present
+  tasks:
+    - name: Install HTTPD
+      yum:
+        name: httpd
+        state: present
 
-- name: start Httpd
-service:
-name: httpd
-state: started
+    - name: Start HTTPD
+      service:
+        name: httpd
+        state: started
 
-
-- name: Enable httpd
-service:
-name: httpd
-enable: yes
-
-...
+    - name: Enable HTTPD on boot
+      service:
+        name: httpd
+        enabled: yes
