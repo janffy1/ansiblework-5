@@ -1,6 +1,6 @@
-----
-- name:update n1 servers
-hosts:n1
+---
+- name: update n1 servers
+hosts: n1
 
 tasks:
 - name: create Directory
@@ -13,13 +13,13 @@ file:
 path: /home/e2c-user/new_dir_1
 state: directory
 
--name:update n2 serves
-hosts:n2
+-name: update n2 serves
+hosts: n2
 
 tasks:
 -name: create directory
 file:
-path:/home/ec2-user/new_dir_1
+path: /home/ec2-user/new_dir_1
 state directory
 
 -name: create directory
